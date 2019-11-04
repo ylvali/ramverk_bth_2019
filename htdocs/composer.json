@@ -1,0 +1,14 @@
+{
+    "name": "ylva/ramverk",
+    "description": "To keep going w phpunit.",
+    "license": "MIT",
+    "authors": [
+            {
+                "name": "Mikael Roos och Ylva Sjölin",
+                "email": "ylva@spektatum.com"
+            }
+    ],
+    "autoload": {
+        "psr-4": {"Ylva\\": "src/"}
+    }
+}

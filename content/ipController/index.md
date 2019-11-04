@@ -2,7 +2,15 @@
 The ip controller
 =======================================
 
-### Ip verification
+### IP verification : html
  [ Verify ip ](ipC/start)
 
- Check so that the ip is of correct format
+Check an IP.
+Result presented in html.
+
+
+### IP verification: json
+[ Verify ip ](ipC/startJSON)
+
+Check an IP.
+Result presented in JSON.

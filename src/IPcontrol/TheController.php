@@ -1,6 +1,6 @@
 <?php
 
-namespace Anax\IpController;
+namespace Anax\IpControl;
 
 use Anax\Commons\AppInjectableInterface;
 use Anax\Commons\AppInjectableTrait;
@@ -18,7 +18,7 @@ use Anax\Commons\AppInjectableTrait;
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
 
-class IpController implements AppInjectableInterface
+class TheController implements AppInjectableInterface
 {
     use AppInjectableTrait;
     /**
@@ -183,25 +183,125 @@ class IpController implements AppInjectableInterface
     }
 
 
-    /* METHODS FOR THE DICE GAME 2 */
+    /* METHODS FOR THE IP CONTROL */
 
     /**
      *
-     * Start the game
+     * Control IP, result in html
      *
      * @return object
      */
     public function startAction() : object
     {
-          // Link for starting the game
-        //  $aLink = "<a href='playGame'> Start game </a>";
-          $info = " Lets controll some ips :D>";
 
+          // UI form : enter the IP
+          $form =
+          "<form method=GET>
+            <label> Enter IP </label>
+            <input type='text' name='ip'>
+            <input type='submit'>
+          </form>
+          ";
+
+          // Example IPs
+          $aLink = "<br/> Example IP: <br/> IPv4: <a href='?ip=8.8.8.8'> 8.8.8.8 </a>";
+          $aLink .= " <br/> IPv6: <a href='?ip=2001:0db8:85a3:0000:0000:8a2e:0370:7334'> 2001:0db8:85a3:0000:0000:8a2e:0370:7334 </a>";
+
+          // Collect the GET param
+          $checkIP = $this->app->request->getGet('ip', null);
+
+          // Initiate IPcontrol object and get result of verification
+          $res = '';
+          if($checkIP) {
+            #var_dump($checkIP);
+
+            $ipC = new IPcontrol($checkIP);
+            #var_dump($ipC);
+
+            # If result is set to boolean true
+            if($ipC->getResult()){
+              $res = "<p> The IP ".$checkIP." is correct. \n </p>";
+
+              # Get the hostname
+              $hostname = $ipC->getHostname();
+              $res .= "<p>\n Hostname: ".$hostname." </p>";
+            } else {
+              $res = "<p> The IP is incorrect </p>";
+            }
+          }
 
          // Setting the content to send to the view
-         $title = "Test";
+         $title = "IP verification";
          $data = [
-             "content" => "<h2> The ip controller </h2> \n".$info,
+             "content" => "<h2> The ip controller </h2> \n".$form."\n".$aLink,
+             "result" => $res
+         ];
+
+
+         // Adding the view and including the content
+         $this->app->page->add("anax/ipController/ipController", $data);
+
+
+         // Returning the total
+         return $this->app->page->render([
+             "title" => $title,
+         ]);
+    }
+
+
+    /**
+     *
+     * Control IP, result in JSON
+     *
+     * @return object
+     */
+    public function startJSONAction() : object
+    {
+
+          // UI form : enter the IP
+          $form =
+          "<form method=GET>
+            <label> Enter IP </label>
+            <input type='text' name='ip'>
+            <input type='submit'>
+          </form>
+          ";
+
+          // Example IPs
+          $aLink = "<br/> Example IP: <br/> IPv4: <a href='?ip=8.8.8.8'> 8.8.8.8 </a>";
+          $aLink .= " <br/> IPv6: <a href='?ip=2001:0db8:85a3:0000:0000:8a2e:0370:7334'> 2001:0db8:85a3:0000:0000:8a2e:0370:7334 </a>";
+
+          // Explanation
+          $exp = "The JSON object includes the IP nr<br/> a key called 'isIP' shows if the IP is correct with a boolean (1 or 0) <br/> and a hostname if one exists.";
+
+          // Collect the GET param
+          $checkIP = $this->app->request->getGet('ip', null);
+
+          // Initiate IPcontrol object and get result of verification
+          $res = '';
+          if($checkIP) {
+            #var_dump($checkIP);
+
+            $ipC = new IPcontrol($checkIP);
+            #var_dump($ipC);
+
+            # If result is set to boolean true
+            if($ipC->getResult()){
+              $res = "<p> The IP ".$checkIP." is correct. \n </p>";
+
+              # Get the JSON data
+              $dataJSON = $ipC->getJSONres();
+              $res .= $dataJSON;
+            } else {
+              $res = "<p> The IP is incorrect </p>";
+            }
+          }
+
+         // Setting the content to send to the view
+         $title = "IP verification";
+         $data = [
+             "content" => "<h2> The ip controller </h2> \n".$form."\n".$aLink,
+             "result" => $res." <br/><br/> ".$exp,
          ];
 
 

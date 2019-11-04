@@ -11,7 +11,7 @@ return [
         [
             "info" => "Development and debugging information.",
             "mount" => "ipC",
-            "handler" => "\Anax\IpController\IpController",
+            "handler" => "\Anax\IpControl\TheController",
         ],
     ]
 ];
