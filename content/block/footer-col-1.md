@@ -1,3 +1,3 @@
-#### Footer col 1
+#### Web programmering
 
-Med brödtext i ett stycke som säger något trevligt om just detta block, eller kanske en lista av länkar.
+Kurs i webb programmering via BTH & dbwebb

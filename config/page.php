@@ -34,7 +34,7 @@ return [
             "template" => "anax/v2/header/site_logo",
             "data" => [
                 "class" => "large",
-                "siteLogo"      => "image/stripey.png",
+                "siteLogo"      => "image/stripey_wtxt.png",
                 "siteLogoAlt"   => "Stripey",
             ],
         ],
@@ -44,7 +44,7 @@ return [
             "data" => [
                 "homeLink"      => "",
                 "siteLogoText"  => "ylva - ramverk1",
-                "siteLogoTextIcon" => "image/stripey.png",
+                "siteLogoTextIcon" => "image/stripey_wtxt.png",
                 "siteLogoTextIconAlt" => "Stripey",
             ],
         ],

@@ -1,3 +1,3 @@
 #### Redovisa på GitHub
 
-Skriv något kort om ditt redovisa-repo och länka till [repot för me/redovisa på GitHub](XXX).
+Redovisa repot är en övning i att arbeta med Anax samt att skapa med PHP [repot för ylvali/ramverk_bth_2019 på GitHub](https://github.com/ylvali/ramverk_bth_2019).
