@@ -1,5 +1,5 @@
 <?php
-namespace Anax\IPcontrol;
+namespace Ylva\IPcontrol2;
 
 
 /*
@@ -58,19 +58,14 @@ class IPcontrol
 
 
     /**
-     * Control the ip using a built in filter
-     * https://www.php.net/filter_var
+     * Control the ip using inet_pton
      * Set hostname if exists
      *
      * @return void
      */
     private function controlIP($IPdata)
     {
-        // $ip_res = inet_pton($IPdata);
-        // inet_prton(ip) ::: throws warning if IP does not exist
-
-        // Validate w filter
-        $ip_res = filter_var($IPdata, FILTER_VALIDATE_IP);
+        $ip_res = inet_pton($IPdata);
 
         if($ip_res === false) {
           $this->isIP = false;
@@ -95,31 +90,11 @@ class IPcontrol
     /**
      * Get the hostname
      *
-     * @return string
+     * @return boolean
      */
     public function getHostname()
     {
       return $this->hostname;
-    }
-
-
-
-    /**
-     * Get the result in JSON
-     *
-     * @return string
-     */
-    public function getJSONres()
-    {
-
-      $jsonRes = "
-      {
-        'IP': $this->suggestedIP;
-        'isIP': $this->isIP;
-        'hostname': $this->hostname;
-      }
-      ";
-      return $jsonRes;
     }
 
 

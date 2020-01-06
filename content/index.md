@@ -12,7 +12,7 @@ Ylva här.
 
 Jag är uppvuxen i Lund men har bott många år utomlands (Barcelona, London, Sri Lanka).
 
-Jag har tyckt om datorer sedan jag var barn. Jag minns än då jag fick vara med och programmera på pappas och kunde få den att säga hej till mig.
+Jag har tyckt om datorer sedan jag var barn. Jag minns då jag fick vara med och programmera på pappas och kunde få den att säga hej till mig.
 Jag minns modemuppkoppling och tegelstensmobiler. Jag har gått 1 års systemvetenskap då jag var kring 20 år. Jag älskade programmeringen som då var i Java och objektorienterad.
 
 Av olika anledningar så lämnade jag universitetet och åkte till Barcelona. Jag började skapa smycken i metall och på den vägen har det fortsatt.

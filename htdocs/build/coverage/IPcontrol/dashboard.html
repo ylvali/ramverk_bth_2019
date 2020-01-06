@@ -2,14 +2,14 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Dashboard for C:\cygwin64\home\Ylvali\dbwebbkurser\ramverk1\ramverk1\me\redovisa\htdocs\src</title>
+  <title>Dashboard for C:\cygwin64\home\Ylvali\dbwebbkurser\ramverk1\ramverk1\me\redovisa\htdocs\src/IPcontrol</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href=".css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href=".css/nv.d3.min.css" rel="stylesheet" type="text/css">
-  <link href=".css/style.css" rel="stylesheet" type="text/css">
+  <link href="../.css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../.css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href="../.css/style.css" rel="stylesheet" type="text/css">
   <!--[if lt IE 9]>
-  <script src=".js/html5shiv.min.js"></script>
-  <script src=".js/respond.min.js"></script>
+  <script src="../.js/html5shiv.min.js"></script>
+  <script src="../.js/respond.min.js"></script>
   <![endif]-->
  </head>
  <body>
@@ -18,7 +18,8 @@
     <div class="row">
      <div class="col-md-12">
       <ol class="breadcrumb">
-        <li><a href="index.html">C:\cygwin64\home\Ylvali\dbwebbkurser\ramverk1\ramverk1\me\redovisa\htdocs\src</a></li>
+        <li><a href="../index.html">C:\cygwin64\home\Ylvali\dbwebbkurser\ramverk1\ramverk1\me\redovisa\htdocs\src</a></li>
+        <li><a href="index.html">IPcontrol</a></li>
         <li class="active">(Dashboard)</li>
 
       </ol>
@@ -140,11 +141,11 @@
     </p>
    </footer>
   </div>
-  <script src=".js/jquery.min.js" type="text/javascript"></script>
-  <script src=".js/bootstrap.min.js" type="text/javascript"></script>
-  <script src=".js/holder.min.js" type="text/javascript"></script>
-  <script src=".js/d3.min.js" type="text/javascript"></script>
-  <script src=".js/nv.d3.min.js" type="text/javascript"></script>
+  <script src="../.js/jquery.min.js" type="text/javascript"></script>
+  <script src="../.js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../.js/holder.min.js" type="text/javascript"></script>
+  <script src="../.js/d3.min.js" type="text/javascript"></script>
+  <script src="../.js/nv.d3.min.js" type="text/javascript"></script>
   <script type="text/javascript">
 $(document).ready(function() {
   nv.addGraph(function() {
@@ -157,7 +158,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#classCoverageDistribution svg')
-      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,7], "Class Coverage"))
+      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,1], "Class Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -175,7 +176,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#methodCoverageDistribution svg')
-      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,20], "Method Coverage"))
+      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,4], "Method Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -225,7 +226,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([[100,5,"<a href=\"IPcontrol\/IPcontrol.php.html#32\">Ylva\\IPcontrol\\IPcontrol<\/a>"],[100,4,"<a href=\"IPcontrol2\/CurrentIPModel.php.html#13\">Ylva\\IPcontrol2\\CurrentIPModel<\/a>"],[100,4,"<a href=\"IPcontrol2\/DataController.php.html#24\">Ylva\\IPcontrol2\\DataController<\/a>"],[100,3,"<a href=\"IPcontrol2\/FormModel.php.html#15\">Ylva\\IPcontrol2\\FormModel<\/a>"],[100,5,"<a href=\"IPcontrol2\/IPcontrol.php.html#32\">Ylva\\IPcontrol2\\IPcontrol<\/a>"],[100,1,"<a href=\"IPcontrol2\/FormTrait.php.html#8\">FormTrait<\/a>"],[100,3,"<a href=\"IPcontrol2\/IpTrait.php.html#8\">IpTrait<\/a>"]], 'Class Complexity'))
+      .datum(getComplexityData([[100,5,"<a href=\"IPcontrol.php.html#32\">Ylva\\IPcontrol\\IPcontrol<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);
@@ -249,7 +250,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Method Complexity');
 
     d3.select('#methodComplexity svg')
-      .datum(getComplexityData([[100,1,"<a href=\"IPcontrol\/IPcontrol.php.html#51\">Ylva\\IPcontrol\\IPcontrol::__construct<\/a>"],[100,2,"<a href=\"IPcontrol\/IPcontrol.php.html#66\">Ylva\\IPcontrol\\IPcontrol::controlIP<\/a>"],[100,1,"<a href=\"IPcontrol\/IPcontrol.php.html#84\">Ylva\\IPcontrol\\IPcontrol::getResult<\/a>"],[100,1,"<a href=\"IPcontrol\/IPcontrol.php.html#95\">Ylva\\IPcontrol\\IPcontrol::getHostname<\/a>"],[100,1,"<a href=\"IPcontrol2\/CurrentIPModel.php.html#29\">Ylva\\IPcontrol2\\CurrentIPModel::__construct<\/a>"],[100,2,"<a href=\"IPcontrol2\/CurrentIPModel.php.html#42\">Ylva\\IPcontrol2\\CurrentIPModel::controlIP<\/a>"],[100,1,"<a href=\"IPcontrol2\/CurrentIPModel.php.html#71\">Ylva\\IPcontrol2\\CurrentIPModel::getIP<\/a>"],[100,1,"<a href=\"IPcontrol2\/DataController.php.html#35\">Ylva\\IPcontrol2\\DataController::__construct<\/a>"],[100,1,"<a href=\"IPcontrol2\/DataController.php.html#47\">Ylva\\IPcontrol2\\DataController::getData<\/a>"],[100,2,"<a href=\"IPcontrol2\/DataController.php.html#65\">Ylva\\IPcontrol2\\DataController::ipCheck<\/a>"],[100,1,"<a href=\"IPcontrol2\/FormModel.php.html#32\">Ylva\\IPcontrol2\\FormModel::__construct<\/a>"],[100,1,"<a href=\"IPcontrol2\/FormModel.php.html#47\">Ylva\\IPcontrol2\\FormModel::setData<\/a>"],[100,1,"<a href=\"IPcontrol2\/FormModel.php.html#68\">Ylva\\IPcontrol2\\FormModel::getData<\/a>"],[100,1,"<a href=\"IPcontrol2\/IPcontrol.php.html#51\">Ylva\\IPcontrol2\\IPcontrol::__construct<\/a>"],[100,2,"<a href=\"IPcontrol2\/IPcontrol.php.html#66\">Ylva\\IPcontrol2\\IPcontrol::controlIP<\/a>"],[100,1,"<a href=\"IPcontrol2\/IPcontrol.php.html#84\">Ylva\\IPcontrol2\\IPcontrol::getResult<\/a>"],[100,1,"<a href=\"IPcontrol2\/IPcontrol.php.html#95\">Ylva\\IPcontrol2\\IPcontrol::getHostname<\/a>"],[100,1,"<a href=\"IPcontrol2\/FormTrait.php.html#22\">FormTrait::createForm<\/a>"],[100,1,"<a href=\"IPcontrol2\/IpTrait.php.html#28\">IpTrait::controlIP<\/a>"],[100,2,"<a href=\"IPcontrol2\/IpTrait.php.html#46\">IpTrait::getIpData<\/a>"]], 'Method Complexity'))
+      .datum(getComplexityData([[100,1,"<a href=\"IPcontrol.php.html#51\">Ylva\\IPcontrol\\IPcontrol::__construct<\/a>"],[100,2,"<a href=\"IPcontrol.php.html#66\">Ylva\\IPcontrol\\IPcontrol::controlIP<\/a>"],[100,1,"<a href=\"IPcontrol.php.html#84\">Ylva\\IPcontrol\\IPcontrol::getResult<\/a>"],[100,1,"<a href=\"IPcontrol.php.html#95\">Ylva\\IPcontrol\\IPcontrol::getHostname<\/a>"]], 'Method Complexity'))
       .transition()
       .duration(500)
       .call(chart);

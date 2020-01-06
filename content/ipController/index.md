@@ -14,3 +14,11 @@ Result presented in html.
 
 Check an IP.
 Result presented in JSON.
+
+
+### IP control MVC : html
+<a href='../../kmom02/view/theView2.php'> IP control MVC : html </a>
+
+
+### IP control MVC: JSON
+<a href='../../kmom02/view/theViewJSONexp.php'> IP control MVC : JSON api </a>

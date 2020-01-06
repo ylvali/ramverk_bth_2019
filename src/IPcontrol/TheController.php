@@ -1,6 +1,6 @@
 <?php
 
-namespace Anax\IpControl;
+namespace Anax\IPcontrol;
 
 use Anax\Commons\AppInjectableInterface;
 use Anax\Commons\AppInjectableTrait;
@@ -8,6 +8,7 @@ use Anax\Commons\AppInjectableTrait;
 // use Anax\Route\Exception\ForbiddenException;
 // use Anax\Route\Exception\NotFoundException;
 // use Anax\Route\Exception\InternalErrorException;
+
 /**
  * A sample controller to show how a controller class can be implemented.
  * The controller will be injected with $app if implementing the interface
